@@ -6,15 +6,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import AddIcon from '@mui/icons-material/Add'
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
-import Groups2Icon from '@mui/icons-material/Groups2'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import { Backdrop } from '../ui/Backdrop'
-import PermIdentityIcon from '@mui/icons-material/PermIdentity'
-import Diversity1Icon from '@mui/icons-material/Diversity1'
-import LogoutIcon from '@mui/icons-material/Logout'
-import { NavigationLink } from './NavLink'
+import { Backdrop } from '../UI/Backdrop'
+import { NavigationLink } from '../Navigation/NavLink'
 import Typography from '@mui/material/Typography'
-import { AuthContext } from '../../context/AuthContext'
 import Switch from '@mui/material/Switch'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import sygnetLogo from '../../img/sygnet.svg'
@@ -30,7 +25,6 @@ const getTheme = () => {
 export const Nav = () => {
 	const [hiddenNav, setHiddenNav] = useToggle()
 	const { notes, trashNotes, favouriteNotes } = useContext(NotesContext)
-	const { isLoggedIn, logout } = useContext(AuthContext)
 	const { localTheme: themeState } = getTheme()
 	const [theme, setTheme] = useToggle(themeState)
 
@@ -93,49 +87,6 @@ export const Nav = () => {
 							icon={<FavoriteBorderIcon className={classes.icon} />}
 							tooltipTitle={<Typography fontSize={11}>Favourite</Typography>}
 						/>
-						{isLoggedIn ? (
-							<NavigationLink
-								title='Account'
-								hiddenNav={!hiddenNav}
-								href='/user'
-								icon={<PermIdentityIcon className={classes.icon} />}
-								tooltipTitle={<Typography fontSize={11}>Account</Typography>}
-							/>
-						) : (
-							<NavigationLink
-								title='Login'
-								hiddenNav={!hiddenNav}
-								href='/login'
-								icon={<PermIdentityIcon className={classes.icon} />}
-								tooltipTitle={<Typography fontSize={11}>Login</Typography>}>
-								{!isLoggedIn && <span className={classes.loginMark}>Login</span>}
-							</NavigationLink>
-						)}
-						<NavigationLink
-							title='Users'
-							hiddenNav={!hiddenNav}
-							href='/users'
-							icon={<Groups2Icon className={classes.icon} />}
-							tooltipTitle={<Typography fontSize={11}>Users</Typography>}></NavigationLink>
-						{isLoggedIn && (
-							<>
-								<NavigationLink
-									title='Friends'
-									hiddenNav={!hiddenNav}
-									href='/friends'
-									icon={<Diversity1Icon className={classes.icon} />}
-									tooltipTitle={<Typography fontSize={11}>Friends</Typography>}></NavigationLink>
-
-								<NavigationLink
-									onClick={logout}
-									hiddenNav={!hiddenNav}
-									title='Logout'
-									href='/login'
-									icon={<LogoutIcon className={classes.icon} />}
-									tooltipTitle={<Typography fontSize={11}>Logout</Typography>}
-								/>
-							</>
-						)}
 
 						<FormControlLabel
 							control={<Switch onClick={setTheme} checked={!theme} />}

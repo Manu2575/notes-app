@@ -2,11 +2,10 @@ import { useContext, useId } from 'react'
 import { Note } from '../../types/NoteType'
 import classes from './NoteItem.module.scss'
 import { motion } from 'framer-motion'
-import { MainButton } from '../ui/MainButton'
-import { SecondaryButton } from '../ui/SecondaryButton'
+import { MainButton } from '../UI/MainButton'
+import { SecondaryButton } from '../UI/SecondaryButton'
 import { NotesContext } from '../../context/NoteContext'
 import { Link } from 'react-router-dom'
-import { ProfileLink } from '../ui/ProfileLink'
 import 'react-toastify/dist/ReactToastify.css'
 
 type NoteItemProps = {
@@ -38,7 +37,6 @@ export const NoteItem = ({ id, title, category, description, favourite, note }: 
 			exit={{ x: 30, opacity: 0 }}
 			className={`${classes.note} ${favourite ? classes.favouriteNote : undefined}`}>
 			<div className={classes.header}>
-				<ProfileLink />
 				<h2>{title}</h2>
 			</div>
 			<div className={classes.content}>

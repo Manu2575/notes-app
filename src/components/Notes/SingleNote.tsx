@@ -5,12 +5,11 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import { NotesContext } from '../../context/NoteContext'
 import { Note } from '../../types/NoteType'
-import { SingleNoteDetails } from './SingleNoteDetails'
+import { SingleNoteDetails } from '../Notes/SingleNoteDetails'
 import { getFullDate } from '../../constants/FullDate'
-import { MainButton } from '../ui/MainButton'
-import { SecondaryButton } from '../ui/SecondaryButton'
-import { Heading } from '../ui/Heading'
-import { ProfileLink } from '../ui/ProfileLink'
+import { MainButton } from '../UI/MainButton'
+import { SecondaryButton } from '../UI/SecondaryButton'
+import { Heading } from '../UI/Heading'
 
 export const SingleNoteItem = () => {
 	const { notes, updateNote } = useContext(NotesContext)
@@ -133,7 +132,6 @@ export const SingleNoteItem = () => {
 					) : (
 						<>
 							<div className={classes.header}>
-								<ProfileLink />
 								<div className={classes.headerTitle}>
 									<p>Title</p>
 									<h2>{newTitle}</h2>

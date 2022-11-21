@@ -1,10 +1,9 @@
 import { useState, useContext } from 'react'
 import { Note } from '../../types/NoteType'
-import classes from '../notes/NoteItem.module.scss'
+import classes from '../Notes/NoteItem.module.scss'
 import { motion } from 'framer-motion'
 import { NotesContext } from '../../context/NoteContext'
-import { MainButton } from '../ui/MainButton'
-import { ProfileLink } from '../ui/ProfileLink'
+import { MainButton } from '../UI/MainButton'
 
 type FavouriteNoteItemProps = {
 	note: Note
@@ -35,7 +34,6 @@ export const FavouriteNoteItem = ({ note, favourite, title, category, descriptio
 			className={`${classes.note} ${favourite ? classes.favouriteNote : undefined}`}>
 			{favourite && <div className={classes.favouriteWrapper} />}
 			<div className={classes.header}>
-				<ProfileLink />
 				<h2>{title}</h2>
 			</div>
 			<div className={classes.content}>

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import classes from './NoteItem.module.scss'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { EditHistory } from '../../types/EditHistoryType'
-import { Heading } from '../ui/Heading'
-import { ProfileLink } from '../ui/ProfileLink'
+import { Heading } from '../UI/Heading'
 
 type noteDetailsType = {
 	id: string | undefined
@@ -37,11 +36,6 @@ export const SingleNoteDetails = ({ date, id, favourite, editHistory }: noteDeta
 				<div className={classes.detailsControls}>
 					<h3>Date of create</h3>
 					<p>{date}</p>
-				</div>
-
-				<div className={classes.detailsControls}>
-					<h3>Author</h3>
-					<ProfileLink />
 				</div>
 			</div>
 		</div>

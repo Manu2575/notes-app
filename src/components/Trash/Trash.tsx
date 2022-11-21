@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { TrashItem } from './TrashItem'
-import classes from '../notes/Notes.module.scss'
+import { TrashItem } from '../Trash/TrashItem'
+import classes from '../Notes/Notes.module.scss'
 import empty from '../../img/trash.svg'
 import { AnimatePresence } from 'framer-motion'
 import { NotesContext } from '../../context/NoteContext'
-import { MainButton } from '../ui/MainButton'
+import { MainButton } from '../UI/MainButton'
 import { Link } from 'react-router-dom'
-import { Heading } from '../ui/Heading'
+import { Heading } from '../UI/Heading'
 
 export const Trash = () => {
 	const { trashNotes, clearTrash } = useContext(NotesContext)
