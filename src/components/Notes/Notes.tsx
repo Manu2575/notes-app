@@ -106,14 +106,17 @@ export const Notes = () => {
 					<div className={classes.buttons}>
 						<SearchBar disabled={!viewCondition} title='notes' />
 						<FilterPopup disabled={!viewCondition} />
+						{notes.length > 2 ? (
 						<SecondaryButton
-							disabled={notes.length < 3}
+							disabled={notes.length < 2}
 							onClick={onViewToggle}
 							title={viewCondition ? 'Carousel view' : 'Grid view'}
 						/>
+						): null }
 						<MainButton title='Trash all' onClick={removeAll} />
+						
 					</div>
-				) : null}
+				) : null }
 			</div>
 
 			<AnimatePresence>
