@@ -155,7 +155,7 @@ export const Notes = () => {
 			</AnimatePresence>
 
 			{!currentNotes.length && emptyContent}
-			{currentNotes.length && viewCondition && (
+			{!!currentNotes.length && viewCondition && (
 				<NotePagination notesPerPage={notesPerPage} totalNotes={notes.length} paginate={paginate} />
 			)}
 		</div>
