@@ -90,6 +90,7 @@ export const Form = () => {
 						<option value={'Traveling'}>Traveling</option>
 						<option value={'Business'}>Business</option>
 						<option value={'Cooking'}>Cooking</option>
+						<option value={'Gaming'}>Gaming</option>
 					</select>
 				</div>
 
