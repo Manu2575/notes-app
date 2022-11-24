@@ -43,7 +43,7 @@
 	}
 
 	.list {
-		display: grid;
+		display: flexbox;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2.5rem;
 		border-radius: 1rem;
