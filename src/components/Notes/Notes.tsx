@@ -138,7 +138,7 @@ export const Notes = () => {
 				)}
 
 				{!viewCondition && (
-					<Slider {...sliderSettings}>
+					<Slider  className={classes.listS}{...sliderSettings}>
 						{currentNotes.map((note) => {
 							return (
 								<NoteItem
